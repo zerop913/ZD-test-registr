@@ -1,14 +1,14 @@
 <?php
 
-$servername = "172.20.7.6";
-$username = "st";
-$password = "pwd";
+$servername = "localhost";
+$username = "root";
+$password = "";
 $dbname = "drive-school";
 
-$conn = pg_connect($servername, $username, $password, $dbname);
+$conn = mysql_connect($servername, $username, $password, $dbname);
 
 if(!$conn){
-    die("Connection Failed". pg_connect());
+    die("Connection Failed". mysql_connect());
 } else {
     "Success";
 }
