@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Авторизация</title>
+    <link href="./css/output.css" rel="stylesheet" />
+    <style>
+      .error-message {
+        color: red;
+        font-size: 14px;
+      }
+
+      .success-message {
+        color: green;
+        font-size: 14px;
+      }
+    </style>
+    <script src="./js/authorization.js"></script>
+  </head>
+  <body class="bg-white">
+    <main class="container flex flex-col md:flex-row p-0">
+      <div class="md:w-1/2">
+        <img
+          class="w-full h-screen object-cover"
+          src="./assets/Rectangle 2756.png"
+          alt="Background Image"
+        />
+      </div>
+      <div class="md:w-1/2 md:p-12 mx-0 my-auto">
+        <div class="font-semibold text-4xl text-center mb-4">Авторизация</div>
+        <form
+          action="./php/authorization.php"
+          method="POST"
+          onsubmit="return validateForm()"
+        >
+          <div class="mt-5">
+            <p class="text-xl text-[#333333]">Логин</p>
+            <input
+              name="username"
+              class="w-full h-12 mt-2 bg-[#F2F2F2] stroke-[#E5E5E5] rounded-md font-['SfProDisplay-Regular',_sans-serif] px-3 text-[#000000] text-lg border-2 focus:outline-sky-500"
+              placeholder="Введите логин"
+              type="text"
+              id="username"
+            />
+            <div id="username-error" class="error-message"></div>
+            <div id="username-exists-error" class="error-message"></div>
+          </div>
+
+          <div class="mt-5">
+            <p class="text-xl text-[#333333]">Почта</p>
+            <input
+              name="email"
+              class="w-full h-12 mt-2 bg-[#F2F2F2] stroke-[#E5E5E5] rounded-md font-['SfProDisplay-Regular',_sans-serif] px-3 text-[#000000] text-lg border-2 focus:outline-sky-500"
+              placeholder="Введите email"
+              type="email"
+              id="email"
+            />
+            <div id="email-error" class="error-message"></div>
+            <div id="email-exists-error" class="error-message"></div>
+          </div>
+
+          <div class="mt-5">
+            <p class="text-xl text-[#333333]">Пароль</p>
+            <input
+              name="password"
+              class="w-full h-12 mt-2 bg-[#F2F2F2] stroke-[#E5E5E5] rounded-md font-['SfProDisplay-Regular',_sans-serif] px-3 text-[#000000] text-lg border-2 focus:outline-sky-500"
+              placeholder="Введите пароль"
+              type="password"
+              id="password"
+            />
+            <div id="password-error" class="error-message"></div>
+          </div>
+          <div id="success-message" class="success-message"></div>
+          <div class="mt-6">
+            <button
+              class="bg-[#007AFF] w-full h-12 text-center font-semibold text-white rounded-md hover:bg-blue-600"
+              type="submit"
+            >
+              Вход
+            </button>
+          </div>
+        </form>
+        <div class="mt-6">
+          <p class="text-base text-center">
+            Нет аккаунта?
+            <a href="./register.html" class="text-blue-500">Регистрация</a>
+          </p>
+        </div>
+        <div class="flex p-8 justify-center">
+          <img src="./assets/2023-12-23_02-06-06 1.png" alt="Footer Image" />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
